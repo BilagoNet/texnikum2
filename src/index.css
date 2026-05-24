@@ -153,4 +153,46 @@
     background: var(--color-surface-card-dark);
     box-shadow: 0 18px 50px -22px rgba(0, 0, 0, 0.6);
   }
+
+  /* Markazlashgan input/textarea uslubi — dark/light bir xil tarzda ishlaydi */
+  .form-input {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    background-color: var(--color-surface);
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-ink-900);
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+  }
+  .form-input::placeholder { color: var(--color-ink-300); }
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-brand-500);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(79, 93, 228, 0.15);
+  }
+  .dark .form-input {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f1f5f9;
+  }
+  .dark .form-input::placeholder { color: #64748b; }
+  .dark .form-input:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-brand-400);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+  }
+  /* Landing-shell ichida ham xuddi shu majburiy qiymatlar (light tema) */
+  .dark .landing-shell .form-input {
+    background-color: var(--color-surface) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    color: var(--color-ink-900) !important;
+  }
+  .dark .landing-shell .form-input::placeholder { color: var(--color-ink-300) !important; }
+  .dark .landing-shell .form-input:focus {
+    background-color: #fff !important;
+    border-color: var(--color-brand-500) !important;
+    box-shadow: 0 0 0 4px rgba(79, 93, 228, 0.15) !important;
+  }
 }

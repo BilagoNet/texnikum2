@@ -63,7 +63,7 @@ export function Topbar({ onOpenSidebar }: TopbarProps) {
             <input
               type="search"
               placeholder="Qidirish… (⌘K)"
-              className="w-56 rounded-xl border border-ink-900/10 bg-white py-2 pl-10 pr-3 text-sm text-ink-900 placeholder:text-ink-300 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/15 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-slate-500 lg:w-72"
+              className="form-input !w-56 !py-2 !pl-10 !pr-3 lg:!w-72"
             />
           </div>
           <button

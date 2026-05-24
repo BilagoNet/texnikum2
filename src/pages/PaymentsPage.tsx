@@ -177,7 +177,7 @@ export function PaymentsPage() {
               placeholder="O'quvchi F.I.SH, guruh yoki tranzaksiya ID"
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              className="w-full rounded-2xl border border-ink-900/10 bg-surface py-3 pl-11 pr-4 text-sm text-ink-900 placeholder:text-ink-300 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 dark:border-white/10 dark:bg-white/5 dark:text-white"
+              className="form-input pl-11"
             />
           </div>
           <div className="flex items-center gap-2 overflow-x-auto scrollbar-hidden">

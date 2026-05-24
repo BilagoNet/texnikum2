@@ -60,7 +60,7 @@ export function ContactPage() {
               required
               rows={4}
               placeholder="Savolingizni yozing…"
-              className="mt-2 w-full resize-none rounded-2xl border border-ink-900/10 bg-surface px-4 py-3 text-sm focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 dark:border-white/10 dark:bg-white/5 dark:text-white"
+              className="form-input mt-2 resize-none"
             />
           </div>
 
@@ -106,7 +106,7 @@ function Field({
         required
         type={type}
         placeholder={placeholder}
-        className="mt-2 w-full rounded-2xl border border-ink-900/10 bg-surface px-4 py-3 text-sm focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 dark:border-white/10 dark:bg-white/5 dark:text-white"
+        className="form-input mt-2"
       />
     </div>
   )
