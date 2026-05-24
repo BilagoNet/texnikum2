@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { IconGraduation, IconMail, IconMapPin, IconPhone } from './Icon'
 
 export function Footer() {
@@ -10,7 +11,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <a href="#top" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-accent-violet text-white">
                 <IconGraduation size={22} />
               </span>
@@ -20,7 +21,7 @@ export function Footer() {
                 </span>
                 <span className="block text-base font-bold">Qarshi tumani 3-son</span>
               </span>
-            </a>
+            </Link>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-white/70">
               O&apos;quv markazlari faoliyatini iqtisodiy rivojlantirishga mo&apos;ljallangan raqamli platforma.
               Boshqaruv, hisobot va o&apos;quv jarayonini yagona tizimda yuritish imkonini beradi.
@@ -28,14 +29,19 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-white/80">Navigatsiya</h4>
+            <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-white/80">Landing</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
-              <li><a href="#about" className="hover:text-white">Ob&apos;ekt va predmet</a></li>
-              <li><a href="#goals" className="hover:text-white">Maqsad</a></li>
-              <li><a href="#features" className="hover:text-white">Amaliy ahamiyat</a></li>
-              <li><a href="#process" className="hover:text-white">Texnologik jarayon</a></li>
-              <li><a href="#results" className="hover:text-white">Natijalar</a></li>
-              <li><a href="#contact" className="hover:text-white">Aloqa</a></li>
+              <li><Link to="/" className="hover:text-white">Bosh sahifa</Link></li>
+              <li><a href="/#about" className="hover:text-white">Platforma haqida</a></li>
+              <li><a href="/#features" className="hover:text-white">Imkoniyatlar</a></li>
+              <li><a href="/#process" className="hover:text-white">Texnologik jarayon</a></li>
+            </ul>
+            <h4 className="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-white/80">Boshqaruv</h4>
+            <ul className="mt-4 space-y-2 text-sm text-white/70">
+              <li><Link to="/dashboard" className="hover:text-white">Dashboard</Link></li>
+              <li><Link to="/students" className="hover:text-white">O&apos;quvchilar</Link></li>
+              <li><Link to="/payments" className="hover:text-white">To&apos;lovlar</Link></li>
+              <li><Link to="/statistics" className="hover:text-white">Statistika</Link></li>
             </ul>
           </div>
 

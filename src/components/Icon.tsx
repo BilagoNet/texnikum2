@@ -41,11 +41,20 @@ export const IconGlobe = (p: IconProps) => (
 export const IconUsers = (p: IconProps) => (
   <svg {...base(p)}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
 )
+export const IconUser = (p: IconProps) => (
+  <svg {...base(p)}><circle cx="12" cy="7" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+)
 export const IconBook = (p: IconProps) => (
   <svg {...base(p)}><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 22H20v-5H6.5A2.5 2.5 0 0 0 4 19.5Z"/></svg>
 )
 export const IconChart = (p: IconProps) => (
   <svg {...base(p)}><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-7"/></svg>
+)
+export const IconBarChart = (p: IconProps) => (
+  <svg {...base(p)}><path d="M12 20V10M18 20V4M6 20v-6"/></svg>
+)
+export const IconPieChart = (p: IconProps) => (
+  <svg {...base(p)}><path d="M21 12A9 9 0 1 1 12 3v9h9Z"/></svg>
 )
 export const IconShield = (p: IconProps) => (
   <svg {...base(p)}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -88,4 +97,49 @@ export const IconQuote = (p: IconProps) => (
 )
 export const IconCog = (p: IconProps) => (
   <svg {...base(p)}><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.7l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.7-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.7.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.7 1.6 1.6 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.7.3h.1a1.6 1.6 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.7-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.7v.1a1.6 1.6 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1Z"/></svg>
+)
+export const IconSearch = (p: IconProps) => (
+  <svg {...base(p)}><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+)
+export const IconCalendar = (p: IconProps) => (
+  <svg {...base(p)}><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+)
+export const IconWallet = (p: IconProps) => (
+  <svg {...base(p)}><path d="M20 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2"/><path d="M16 14h2M2 9V7a2 2 0 0 1 2-2h12l4 2"/></svg>
+)
+export const IconFile = (p: IconProps) => (
+  <svg {...base(p)}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+)
+export const IconGrid = (p: IconProps) => (
+  <svg {...base(p)}><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+)
+export const IconDownload = (p: IconProps) => (
+  <svg {...base(p)}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+)
+export const IconBell = (p: IconProps) => (
+  <svg {...base(p)}><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+)
+export const IconSun = (p: IconProps) => (
+  <svg {...base(p)}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+)
+export const IconMoon = (p: IconProps) => (
+  <svg {...base(p)}><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+)
+export const IconLogOut = (p: IconProps) => (
+  <svg {...base(p)}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+)
+export const IconPlus = (p: IconProps) => (
+  <svg {...base(p)}><path d="M12 5v14M5 12h14"/></svg>
+)
+export const IconTrending = (p: IconProps) => (
+  <svg {...base(p)}><path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+)
+export const IconCheckCircle = (p: IconProps) => (
+  <svg {...base(p)}><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+)
+export const IconAlert = (p: IconProps) => (
+  <svg {...base(p)}><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+)
+export const IconFilter = (p: IconProps) => (
+  <svg {...base(p)}><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3Z"/></svg>
 )
