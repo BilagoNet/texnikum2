@@ -2,40 +2,21 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/Theme'
 import {
-  IconBarChart,
-  IconBook,
-  IconCalendar,
+  IconArrowRight,
   IconClose,
-  IconFile,
   IconGraduation,
-  IconGrid,
-  IconLightBulb,
-  IconLock,
-  IconMail,
   IconMenu,
   IconMoon,
   IconSun,
-  IconUser,
-  IconUsers,
-  IconWallet,
 } from './Icon'
 
-const landingLinks = [
-  { to: '/', label: 'Bosh sahifa', icon: <IconBook size={16} /> },
-  { to: '/#about', label: 'Platforma haqida', icon: <IconLightBulb size={16} /> },
-  { to: '/#features', label: 'Imkoniyatlar', icon: <IconLightBulb size={16} /> },
-]
-
-const dashLinks = [
-  { to: '/dashboard', label: 'Dashboard', icon: <IconGrid size={16} /> },
-  { to: '/students', label: "O'quvchilar", icon: <IconUser size={16} /> },
-  { to: '/teachers', label: "O'qituvchilar", icon: <IconUsers size={16} /> },
-  { to: '/schedule', label: 'Dars jadvali', icon: <IconCalendar size={16} /> },
-  { to: '/payments', label: "To'lovlar", icon: <IconWallet size={16} /> },
-  { to: '/reports', label: 'Hisobotlar', icon: <IconFile size={16} /> },
-  { to: '/statistics', label: 'Statistika', icon: <IconBarChart size={16} /> },
-  { to: '/security', label: 'Xavfsizlik', icon: <IconLock size={16} /> },
-  { to: '/contact', label: 'Aloqa', icon: <IconMail size={16} /> },
+const links = [
+  { to: '/', label: 'Bosh sahifa' },
+  { to: '/#about', label: 'Platforma haqida' },
+  { to: '/#features', label: 'Imkoniyatlar' },
+  { to: '/#process', label: 'Jarayon' },
+  { to: '/#results', label: 'Natijalar' },
+  { to: '/#contact', label: 'Aloqa' },
 ]
 
 export function Navbar() {
@@ -53,7 +34,7 @@ export function Navbar() {
 
   useEffect(() => {
     setOpen(false)
-  }, [location.pathname])
+  }, [location.pathname, location.hash])
 
   return (
     <header
@@ -63,37 +44,37 @@ export function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-3 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
         <Link to="/" className="group flex shrink-0 items-center gap-3">
           <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 via-accent-violet to-accent-rose text-white shadow-[0_8px_24px_-8px_rgba(79,93,228,0.6)] transition group-hover:scale-105">
             <IconGraduation size={22} />
           </span>
-          <span className="leading-tight">
+          <span className="hidden leading-tight sm:block">
             <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-500 dark:text-brand-300">
-              Qarshi tumani 3-so...
+              Qarshi tumani 3-son
             </span>
-            <span className="block text-sm font-bold text-ink-900 dark:text-white">Raqamli platforma</span>
+            <span className="block text-sm font-bold text-ink-900 dark:text-white">Texnikum raqamli platforma</span>
           </span>
         </Link>
 
-        <ul className="hidden flex-1 items-center justify-center gap-1 overflow-x-auto xl:flex scrollbar-hidden">
-          {landingLinks.concat(dashLinks).map((l) => (
-            <li key={l.to + l.label} className="shrink-0">
+        <ul className="hidden items-center gap-1 lg:flex">
+          {links.map((l) => (
+            <li key={l.to + l.label}>
               {l.to.startsWith('/#') ? (
                 <a
                   href={l.to}
-                  className="rounded-full px-3 py-2 text-[13px] font-medium text-ink-700 transition hover:bg-brand-50 hover:text-brand-600 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white"
+                  className="rounded-full px-3.5 py-2 text-sm font-medium text-ink-700 transition hover:bg-brand-50 hover:text-brand-600 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white"
                 >
                   {l.label}
                 </a>
               ) : (
                 <NavLink
                   to={l.to}
-                  end={l.to === '/' || l.to === '/dashboard'}
+                  end
                   className={({ isActive }) =>
-                    `rounded-full px-3 py-2 text-[13px] font-medium transition ${
+                    `rounded-full px-3.5 py-2 text-sm font-medium transition ${
                       isActive
-                        ? 'bg-brand-500 text-white shadow-[0_8px_20px_-8px_rgba(79,93,228,0.6)]'
+                        ? 'bg-brand-50 text-brand-600 dark:bg-white/10 dark:text-white'
                         : 'text-ink-700 hover:bg-brand-50 hover:text-brand-600 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white'
                     }`
                   }
@@ -113,10 +94,17 @@ export function Navbar() {
           >
             {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
           </button>
+          <Link
+            to="/dashboard"
+            className="hidden items-center gap-2 rounded-full bg-gradient-to-r from-brand-500 to-accent-violet px-4 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(79,93,228,0.7)] transition hover:-translate-y-0.5 sm:inline-flex"
+          >
+            Tizimga kirish
+            <IconArrowRight size={14} />
+          </Link>
           <button
             aria-label="Menyu"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-white/80 text-ink-900 xl:hidden dark:border-white/10 dark:bg-white/5 dark:text-white"
+            className="grid h-10 w-10 place-items-center rounded-full border border-ink-900/10 bg-white/80 text-ink-900 lg:hidden dark:border-white/10 dark:bg-white/5 dark:text-white"
           >
             {open ? <IconClose size={18} /> : <IconMenu size={18} />}
           </button>
@@ -124,24 +112,20 @@ export function Navbar() {
       </nav>
 
       <div
-        className={`xl:hidden ${
+        className={`lg:hidden ${
           open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         } transition-opacity`}
       >
-        <div className="mx-4 mb-4 max-h-[80vh] overflow-y-auto rounded-2xl border border-white/60 bg-white/95 p-4 shadow-[0_18px_50px_-18px_rgba(15,23,42,0.25)] backdrop-blur dark:border-white/10 dark:bg-slate-900/95">
-          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">Landing</div>
-          <ul className="mt-2 mb-3 flex flex-col gap-1">
-            {landingLinks.map((l) =>
+        <div className="mx-4 mb-4 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-[0_18px_50px_-18px_rgba(15,23,42,0.25)] backdrop-blur dark:border-white/10 dark:bg-slate-900/95">
+          <ul className="flex flex-col gap-1">
+            {links.map((l) =>
               l.to.startsWith('/#') ? (
                 <li key={l.label}>
                   <a
                     href={l.to}
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-ink-700 hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5"
+                    className="block rounded-xl px-4 py-3 text-sm font-medium text-ink-700 hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5"
                   >
-                    <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-50 text-brand-500 dark:bg-white/5">
-                      {l.icon}
-                    </span>
                     {l.label}
                   </a>
                 </li>
@@ -152,41 +136,27 @@ export function Navbar() {
                     end
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium ${
+                      `block rounded-xl px-4 py-3 text-sm font-medium ${
                         isActive
-                          ? 'bg-brand-500 text-white'
+                          ? 'bg-brand-50 text-brand-600 dark:bg-white/10 dark:text-white'
                           : 'text-ink-700 hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5'
                       }`
                     }
                   >
-                    <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/15">{l.icon}</span>
                     {l.label}
                   </NavLink>
                 </li>
               ),
             )}
-          </ul>
-          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300">Boshqaruv</div>
-          <ul className="mt-2 flex flex-col gap-1">
-            {dashLinks.map((l) => (
-              <li key={l.to}>
-                <NavLink
-                  to={l.to}
-                  end={l.to === '/dashboard'}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    `flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium ${
-                      isActive
-                        ? 'bg-gradient-to-r from-brand-500 to-accent-violet text-white'
-                        : 'text-ink-700 hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5'
-                    }`
-                  }
-                >
-                  <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/15">{l.icon}</span>
-                  {l.label}
-                </NavLink>
-              </li>
-            ))}
+            <li className="pt-2">
+              <Link
+                to="/dashboard"
+                onClick={() => setOpen(false)}
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-violet px-5 py-3 text-sm font-semibold text-white"
+              >
+                Tizimga kirish <IconArrowRight size={14} />
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

@@ -71,6 +71,45 @@
     background-color: var(--color-surface-dark);
     color: #e2e8f0;
   }
+  /* Landing shell — har doim yorug' temada ko'rinadi (brand identiteti) */
+  .dark .landing-shell {
+    background-color: var(--color-surface) !important;
+    color: var(--color-ink-900);
+    color-scheme: light;
+  }
+  /* Dark variantlarini majburiy bekor qilamiz (landing'da yorug' tema) */
+  .dark .landing-shell [class*='dark\:text-white'] { color: var(--color-ink-900) !important; }
+  .dark .landing-shell [class*='dark\:text-slate-100'] { color: var(--color-ink-900) !important; }
+  .dark .landing-shell [class*='dark\:text-slate-200'] { color: var(--color-ink-700) !important; }
+  .dark .landing-shell [class*='dark\:text-slate-300'] { color: var(--color-ink-700) !important; }
+  .dark .landing-shell [class*='dark\:text-slate-400'] { color: var(--color-ink-500) !important; }
+  .dark .landing-shell [class*='dark\:text-brand-300'] { color: var(--color-brand-500) !important; }
+  .dark .landing-shell [class*='dark\:bg-slate-950'],
+  .dark .landing-shell [class*='dark\:bg-slate-900'] {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .dark .landing-shell [class*='dark\:bg-white\/5'],
+  .dark .landing-shell [class*='dark\:bg-white\/10'] {
+    background-color: var(--color-brand-50) !important;
+  }
+  .dark .landing-shell [class*='dark\:border-white\/10'] {
+    border-color: rgba(15, 23, 42, 0.08) !important;
+  }
+  .dark .landing-shell input,
+  .dark .landing-shell textarea {
+    background-color: #f5f7fb !important;
+    color: var(--color-ink-900) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+  }
+  .dark .landing-shell input::placeholder,
+  .dark .landing-shell textarea::placeholder {
+    color: var(--color-ink-300) !important;
+  }
+  /* Footer qora bo'lib qoladi (allaqachon to'q rangli) */
+  .dark .landing-shell footer { color: rgba(255, 255, 255, 0.9); }
+  .dark .landing-shell footer [class*='dark\:text-white'] { color: #fff !important; }
+  .dark .landing-shell footer [class*='dark\:text-slate-400'],
+  .dark .landing-shell footer [class*='text-white\/70'] { color: rgba(255, 255, 255, 0.7) !important; }
   ::selection {
     background: rgba(79, 93, 228, 0.25);
   }

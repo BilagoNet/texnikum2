@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
-import { Footer } from './components/Footer'
-import { Navbar } from './components/Navbar'
+import { DashboardLayout } from './components/DashboardLayout'
+import { LandingLayout } from './components/LandingLayout'
 import { ThemeProvider } from './context/Theme'
 import { ContactPage } from './pages/ContactPage'
 import { DashboardPage } from './pages/DashboardPage'
@@ -34,10 +34,11 @@ function App() {
     <ThemeProvider>
       <HashRouter>
         <ScrollToTop />
-        <div className="min-h-screen bg-surface dark:bg-[color:var(--color-surface-dark)]">
-          <Navbar />
-          <Routes>
+        <Routes>
+          <Route element={<LandingLayout />}>
             <Route path="/" element={<HomePage />} />
+          </Route>
+          <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/students" element={<StudentsPage />} />
             <Route path="/teachers" element={<TeachersPage />} />
@@ -47,9 +48,8 @@ function App() {
             <Route path="/statistics" element={<StatisticsPage />} />
             <Route path="/security" element={<SecurityPage />} />
             <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-          <Footer />
-        </div>
+          </Route>
+        </Routes>
       </HashRouter>
     </ThemeProvider>
   )
