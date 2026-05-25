@@ -1,4 +1,6 @@
 import { PageShell } from '../components/PageShell'
+import { BarChart } from '../components/charts/BarChart'
+import { LineChart } from '../components/charts/LineChart'
 import { IconBarChart, IconPieChart, IconTrending } from '../components/Icon'
 import {
   attendanceByDay,
@@ -38,19 +40,23 @@ export function StatisticsPage() {
 
       <section className="grid gap-5 lg:grid-cols-3">
         {/* Course distribution */}
-        <article className="card p-6 lg:col-span-2">
-          <div className="flex items-start justify-between">
-            <div>
-              <h2 className="text-base font-bold text-ink-900 dark:text-white">Yo'nalishlar bo'yicha o'quvchilar taqsimoti</h2>
-              <p className="text-xs text-ink-500 dark:text-slate-400">10 ta asosiy yo'nalish, jami {courseDistribution.reduce((s, c) => s + c.count, 0)} o'quvchi</p>
+        <article className="card overflow-hidden p-5 sm:p-6 lg:col-span-2">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <h2 className="text-base font-bold text-ink-900 dark:text-white sm:text-lg">
+                Yo'nalishlar bo'yicha o'quvchilar taqsimoti
+              </h2>
+              <p className="text-xs text-ink-500 dark:text-slate-400">
+                10 ta asosiy yo'nalish, jami {courseDistribution.reduce((s, c) => s + c.count, 0)} o'quvchi
+              </p>
             </div>
-            <IconBarChart size={20} className="text-brand-500" />
+            <IconBarChart size={20} className="shrink-0 text-brand-500" />
           </div>
           <ul className="mt-5 space-y-3">
             {courseDistribution.map((c) => {
               const max = Math.max(...courseDistribution.map((x) => x.count))
               return (
-                <li key={c.name} className="grid grid-cols-[160px_minmax(0,1fr)_48px] items-center gap-3 sm:grid-cols-[200px_minmax(0,1fr)_60px]">
+                <li key={c.name} className="grid grid-cols-[minmax(0,120px)_minmax(0,1fr)_40px] items-center gap-2 sm:grid-cols-[minmax(0,200px)_minmax(0,1fr)_60px] sm:gap-3">
                   <span className="truncate text-xs font-semibold text-ink-700 dark:text-slate-300">{c.name}</span>
                   <div className="h-3 overflow-hidden rounded-full bg-ink-900/5 dark:bg-white/5">
                     <div
@@ -65,44 +71,40 @@ export function StatisticsPage() {
           </ul>
         </article>
 
-        {/* Donut: payment split */}
-        <article className="card p-6">
-          <div className="flex items-start justify-between">
-            <div>
-              <h2 className="text-base font-bold text-ink-900 dark:text-white">Davomat (haftalik)</h2>
+        {/* Davomat (haftalik) */}
+        <article className="card overflow-hidden p-5 sm:p-6">
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <h2 className="text-base font-bold text-ink-900 dark:text-white sm:text-lg">Davomat (haftalik)</h2>
               <p className="text-xs text-ink-500 dark:text-slate-400">Kun bo'yicha o'rtacha</p>
             </div>
-            <IconPieChart size={20} className="text-accent-violet" />
+            <IconPieChart size={20} className="shrink-0 text-accent-violet" />
           </div>
-          <div className="mt-4 flex h-56 items-end justify-around gap-2">
-            {attendanceByDay.map((d) => (
-              <div key={d.d} className="flex h-full flex-1 flex-col items-center justify-end gap-2">
-                <span className="text-[10px] font-bold text-ink-700 dark:text-slate-300">{d.v}%</span>
-                <div
-                  className={`w-full rounded-t-lg ${
-                    d.v >= 85 ? 'bg-accent-emerald' : d.v >= 75 ? 'bg-accent-amber' : 'bg-accent-rose'
-                  }`}
-                  style={{ height: `${d.v}%` }}
-                />
-                <span className="text-[10px] text-ink-500 dark:text-slate-400">{d.d}</span>
-              </div>
-            ))}
+          <div className="mt-4">
+            <BarChart
+              data={attendanceByDay.map((d) => ({ label: d.d, value: d.v, highlight: d.v < 75 }))}
+              height={208}
+              gradient={{ from: '#10b981', to: '#4f5de4' }}
+              highlightGradient={{ from: '#f5b23e', to: '#f0436e' }}
+            />
           </div>
         </article>
       </section>
 
       {/* Automation stages */}
-      <section className="card p-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-base font-bold text-ink-900 dark:text-white">Avtomatlashtirish darajasi modullar bo'yicha</h2>
+      <section className="card overflow-hidden p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h2 className="text-base font-bold text-ink-900 dark:text-white sm:text-lg">
+              Avtomatlashtirish darajasi modullar bo'yicha
+            </h2>
             <p className="text-xs text-ink-500 dark:text-slate-400">Avtomatik vs qo'lda bajariladigan ishlar nisbati</p>
           </div>
         </div>
         <ul className="mt-5 space-y-4">
           {automationStages.map((s) => (
             <li key={s.name}>
-              <div className="flex items-center justify-between text-xs">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                 <span className="font-semibold text-ink-900 dark:text-white">{s.name}</span>
                 <span className="text-ink-500 dark:text-slate-400">
                   Avto: <strong className="text-accent-emerald">{s.auto}%</strong> · Qo'lda:{' '}
@@ -119,60 +121,25 @@ export function StatisticsPage() {
       </section>
 
       {/* Growth chart */}
-      <section className="card p-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-base font-bold text-ink-900 dark:text-white">O'quvchilar soni dinamikasi</h2>
+      <section className="card overflow-hidden p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h2 className="text-base font-bold text-ink-900 dark:text-white sm:text-lg">
+              O'quvchilar soni dinamikasi
+            </h2>
             <p className="text-xs text-ink-500 dark:text-slate-400">2025-2026 o'quv yili davomida</p>
           </div>
-          <IconTrending size={20} className="text-accent-emerald" />
+          <IconTrending size={20} className="shrink-0 text-accent-emerald" />
         </div>
-        <LineSpark data={studentGrowth} />
+        <div className="mt-4">
+          <LineChart
+            data={studentGrowth.map((d) => ({ label: d.m, value: d.v }))}
+            color="#10b981"
+            height={240}
+            showValues
+          />
+        </div>
       </section>
     </PageShell>
-  )
-}
-
-function LineSpark({ data }: { data: { m: string; v: number }[] }) {
-  const w = 720
-  const h = 220
-  const max = Math.max(...data.map((d) => d.v))
-  const min = Math.min(...data.map((d) => d.v))
-  const pts = data.map((d, i) => ({
-    x: 40 + (i * (w - 60)) / (data.length - 1),
-    y: 20 + ((max - d.v) * (h - 50)) / (max - min || 1),
-  }))
-  const path = pts.reduce(
-    (acc, p, i) => acc + (i === 0 ? `M ${p.x} ${p.y}` : ` C ${pts[i - 1].x + 30} ${pts[i - 1].y}, ${p.x - 30} ${p.y}, ${p.x} ${p.y}`),
-    '',
-  )
-  const area = `${path} L ${pts[pts.length - 1].x} ${h - 20} L ${pts[0].x} ${h - 20} Z`
-  return (
-    <div className="mt-4 w-full overflow-x-auto">
-      <svg viewBox={`0 0 ${w} ${h}`} className="h-56 w-full min-w-[640px]">
-        <defs>
-          <linearGradient id="sp" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        {[0, 1, 2, 3].map((i) => (
-          <line key={i} x1="40" x2={w - 20} y1={20 + ((h - 50) * i) / 3} y2={20 + ((h - 50) * i) / 3} stroke="rgba(148,163,184,0.2)" strokeDasharray="3 4" />
-        ))}
-        <path d={area} fill="url(#sp)" />
-        <path d={path} fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" />
-        {pts.map((p, i) => (
-          <g key={i}>
-            <circle cx={p.x} cy={p.y} r="4.5" fill="#fff" stroke="#10b981" strokeWidth="2.5" />
-            <text x={p.x} y={p.y - 10} textAnchor="middle" style={{ fontSize: 10, fontWeight: 700, fill: 'currentColor' }}>
-              {data[i].v}
-            </text>
-            <text x={p.x} y={h - 4} textAnchor="middle" style={{ fontSize: 10, fill: 'currentColor', opacity: 0.6 }}>
-              {data[i].m}
-            </text>
-          </g>
-        ))}
-      </svg>
-    </div>
   )
 }

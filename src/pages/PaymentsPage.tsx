@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { PageShell } from '../components/PageShell'
 import { SearchInput } from '../components/SearchInput'
+import { BarChart } from '../components/charts/BarChart'
 import {
   IconAlert,
   IconCheckCircle,
@@ -138,32 +139,20 @@ export function PaymentsPage() {
       </section>
 
       {/* Monthly revenue chart */}
-      <section className="card p-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-base font-bold text-ink-900 dark:text-white">Oylik to'lov tushumi (mln so'm)</h2>
+      <section className="card overflow-hidden p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h2 className="text-base font-bold text-ink-900 dark:text-white sm:text-lg">
+              Oylik to'lov tushumi (mln so'm)
+            </h2>
             <p className="text-xs text-ink-500 dark:text-slate-400">2026-yil dinamikasi</p>
           </div>
         </div>
-        <div className="mt-5 flex h-48 items-end justify-between gap-2">
-          {monthlyRevenue.map((d) => {
-            const max = Math.max(...monthlyRevenue.map((x) => x.v))
-            const isHighlight = d.m === 'May'
-            return (
-              <div key={d.m} className="flex h-full flex-1 flex-col items-center justify-end gap-2">
-                <div className="text-[10px] font-bold text-ink-700 dark:text-slate-300">{d.v}</div>
-                <div
-                  className={`w-full rounded-t-lg ${
-                    isHighlight
-                      ? 'bg-gradient-to-t from-accent-rose to-accent-violet shadow-[0_8px_20px_-8px_rgba(240,67,110,0.6)]'
-                      : 'bg-gradient-to-t from-brand-500 to-accent-violet opacity-80'
-                  }`}
-                  style={{ height: `${(d.v / max) * 100}%` }}
-                />
-                <span className="text-[10px] text-ink-500 dark:text-slate-400">{d.m}</span>
-              </div>
-            )
-          })}
+        <div className="mt-4">
+          <BarChart
+            data={monthlyRevenue.map((d) => ({ label: d.m, value: d.v, highlight: d.m === 'May' }))}
+            height={200}
+          />
         </div>
       </section>
 
