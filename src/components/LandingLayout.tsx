@@ -10,7 +10,7 @@ import { Navbar } from './Navbar'
  */
 export function LandingLayout() {
   return (
-    <div className="landing-shell min-h-screen bg-surface text-ink-900">
+    <div className="landing-shell min-h-screen bg-surface text-ink-900 dark:bg-[color:var(--color-surface-dark)] dark:text-slate-100">
       <Navbar />
       <Outlet />
       <Footer />
