@@ -112,9 +112,9 @@ export function Navbar() {
       </nav>
 
       <div
-        className={`lg:hidden ${
-          open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-        } transition-opacity`}
+        className={`overflow-hidden transition-[max-height,opacity] duration-300 lg:hidden ${
+          open ? 'max-h-[80vh] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
+        }`}
       >
         <div className="mx-4 mb-4 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-[0_18px_50px_-18px_rgba(15,23,42,0.25)] backdrop-blur dark:border-white/10 dark:bg-slate-900/95">
           <ul className="flex flex-col gap-1">
