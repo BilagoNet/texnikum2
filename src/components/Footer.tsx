@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { IconGraduation, IconMail, IconMapPin, IconPhone } from './Icon'
+import { SectionLink } from './SectionLink'
 
 export function Footer() {
   return (
@@ -32,9 +33,9 @@ export function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-white/80">Landing</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li><Link to="/" className="hover:text-white">Bosh sahifa</Link></li>
-              <li><a href="/#about" className="hover:text-white">Platforma haqida</a></li>
-              <li><a href="/#features" className="hover:text-white">Imkoniyatlar</a></li>
-              <li><a href="/#process" className="hover:text-white">Texnologik jarayon</a></li>
+              <li><SectionLink sectionId="about" className="hover:text-white">Platforma haqida</SectionLink></li>
+              <li><SectionLink sectionId="features" className="hover:text-white">Imkoniyatlar</SectionLink></li>
+              <li><SectionLink sectionId="process" className="hover:text-white">Texnologik jarayon</SectionLink></li>
             </ul>
             <h4 className="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-white/80">Boshqaruv</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/70">

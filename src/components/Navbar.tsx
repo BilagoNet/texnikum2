@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/Theme'
+import { SectionLink } from './SectionLink'
 import {
   IconArrowRight,
   IconClose,
@@ -10,14 +11,22 @@ import {
   IconSun,
 } from './Icon'
 
-const links = [
-  { to: '/', label: 'Bosh sahifa' },
-  { to: '/#about', label: 'Platforma haqida' },
-  { to: '/#features', label: 'Imkoniyatlar' },
-  { to: '/#process', label: 'Jarayon' },
-  { to: '/#results', label: 'Natijalar' },
-  { to: '/#contact', label: 'Aloqa' },
+type LinkItem =
+  | { kind: 'route'; to: string; label: string; exact?: boolean }
+  | { kind: 'section'; id: string; label: string }
+
+const links: LinkItem[] = [
+  { kind: 'route', to: '/', label: 'Bosh sahifa', exact: true },
+  { kind: 'section', id: 'about', label: 'Platforma haqida' },
+  { kind: 'section', id: 'features', label: 'Imkoniyatlar' },
+  { kind: 'section', id: 'process', label: 'Jarayon' },
+  { kind: 'section', id: 'results', label: 'Natijalar' },
+  { kind: 'section', id: 'contact', label: 'Aloqa' },
 ]
+
+const linkBase =
+  'rounded-full px-3.5 py-2 text-sm font-medium transition text-ink-700 hover:bg-brand-50 hover:text-brand-600 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white'
+const linkActive = 'bg-brand-50 text-brand-600 dark:bg-white/10 dark:text-white'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -34,7 +43,7 @@ export function Navbar() {
 
   useEffect(() => {
     setOpen(false)
-  }, [location.pathname, location.hash])
+  }, [location.pathname])
 
   return (
     <header
@@ -58,32 +67,25 @@ export function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
-          {links.map((l) => (
-            <li key={l.to + l.label}>
-              {l.to.startsWith('/#') ? (
-                <a
-                  href={l.to}
-                  className="rounded-full px-3.5 py-2 text-sm font-medium text-ink-700 transition hover:bg-brand-50 hover:text-brand-600 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white"
-                >
+          {links.map((l) =>
+            l.kind === 'section' ? (
+              <li key={l.id}>
+                <SectionLink sectionId={l.id} className={linkBase}>
                   {l.label}
-                </a>
-              ) : (
+                </SectionLink>
+              </li>
+            ) : (
+              <li key={l.to}>
                 <NavLink
                   to={l.to}
-                  end
-                  className={({ isActive }) =>
-                    `rounded-full px-3.5 py-2 text-sm font-medium transition ${
-                      isActive
-                        ? 'bg-brand-50 text-brand-600 dark:bg-white/10 dark:text-white'
-                        : 'text-ink-700 hover:bg-brand-50 hover:text-brand-600 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white'
-                    }`
-                  }
+                  end={l.exact}
+                  className={({ isActive }) => `${linkBase} ${isActive ? linkActive : ''}`}
                 >
                   {l.label}
                 </NavLink>
-              )}
-            </li>
-          ))}
+              </li>
+            ),
+          )}
         </ul>
 
         <div className="flex shrink-0 items-center gap-2">
@@ -119,27 +121,25 @@ export function Navbar() {
         <div className="mx-4 mb-4 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-[0_18px_50px_-18px_rgba(15,23,42,0.25)] backdrop-blur dark:border-white/10 dark:bg-slate-900/95">
           <ul className="flex flex-col gap-1">
             {links.map((l) =>
-              l.to.startsWith('/#') ? (
-                <li key={l.label}>
-                  <a
-                    href={l.to}
+              l.kind === 'section' ? (
+                <li key={l.id}>
+                  <SectionLink
+                    sectionId={l.id}
                     onClick={() => setOpen(false)}
                     className="block rounded-xl px-4 py-3 text-sm font-medium text-ink-700 hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5"
                   >
                     {l.label}
-                  </a>
+                  </SectionLink>
                 </li>
               ) : (
-                <li key={l.label}>
+                <li key={l.to}>
                   <NavLink
                     to={l.to}
-                    end
+                    end={l.exact}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       `block rounded-xl px-4 py-3 text-sm font-medium ${
-                        isActive
-                          ? 'bg-brand-50 text-brand-600 dark:bg-white/10 dark:text-white'
-                          : 'text-ink-700 hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5'
+                        isActive ? 'bg-brand-50 text-brand-600 dark:bg-white/10 dark:text-white' : 'text-ink-700 hover:bg-brand-50 dark:text-slate-300 dark:hover:bg-white/5'
                       }`
                     }
                   >
