@@ -60,12 +60,16 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    /* Mobile'da horizontal scroll'ni butun sahifa darajasida o'chiramiz.
+       sticky/fixed elementlarga ta'sir qilmaydi (html scroll container o'zi). */
+    overflow-x: hidden;
   }
   body {
     margin: 0;
     font-family: var(--font-sans);
     background-color: var(--color-surface);
     color: var(--color-ink-900);
+    overflow-x: hidden;
   }
   .dark body {
     background-color: var(--color-surface-dark);

@@ -8,11 +8,13 @@ export function DashboardLayout() {
   return (
     <div className="min-h-screen bg-surface dark:bg-[color:var(--color-surface-dark)]">
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-      {/* min-w-0 — flex/grid ichidagi child kontentni qisqartirishga ruxsat beradi
-          overflow-x-clip — chart yoki jadval kengayganda butun sahifa sliding bo'lib ketmaydi */}
-      <div className="min-w-0 overflow-x-clip lg:pl-72">
+      {/* lg:pl-72 — sidebar uchun joy. min-w-0 grid ichidagi kontentni
+          qisqartirishga ruxsat. overflow-x-clip Topbar'ni buzmaslik uchun
+          faqat main'ga qo'yiladi (sticky topbar parent'ida overflow bo'lsa,
+          iOS Safari'da sticky element float bo'lib ketadi). */}
+      <div className="min-w-0 lg:pl-72">
         <Topbar onOpenSidebar={() => setSidebarOpen(true)} />
-        <main className="min-w-0 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+        <main className="min-w-0 overflow-x-clip px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
           <Outlet />
         </main>
       </div>
