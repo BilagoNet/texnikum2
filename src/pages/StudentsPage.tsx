@@ -139,7 +139,7 @@ export function StudentsPage() {
               ))}
               {pageData.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="px-3 py-12 text-center text-sm text-ink-500">
+                  <td colSpan={7} className="px-3 py-12 text-center text-sm text-ink-500 dark:text-slate-400">
                     Hech narsa topilmadi
                   </td>
                 </tr>

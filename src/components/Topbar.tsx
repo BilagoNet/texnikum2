@@ -66,6 +66,7 @@ export function Topbar({ onOpenSidebar }: TopbarProps) {
           </div>
           <button
             aria-label="Bildirishnomalar"
+            onClick={() => alert('0 ta yangi bildirishnoma')}
             className="relative grid h-10 w-10 place-items-center rounded-xl border border-ink-900/10 bg-white text-ink-900 hover:bg-brand-50 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
           >
             <IconBell size={18} />
@@ -79,7 +80,10 @@ export function Topbar({ onOpenSidebar }: TopbarProps) {
             {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
           </button>
           <div className="hidden h-9 w-px bg-ink-900/10 dark:bg-white/10 sm:block" />
-          <button className="hidden items-center gap-3 rounded-xl border border-ink-900/10 bg-white py-1.5 pl-2 pr-3 text-left transition hover:bg-brand-50 sm:flex dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+          <button
+            onClick={() => alert("Profil sahifasi tez orada qo'shiladi")}
+            className="hidden items-center gap-3 rounded-xl border border-ink-900/10 bg-white py-1.5 pl-2 pr-3 text-left transition hover:bg-brand-50 sm:flex dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+          >
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-brand-500 to-accent-violet text-xs font-bold text-white">
               MK
             </span>

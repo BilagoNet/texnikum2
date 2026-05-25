@@ -108,7 +108,7 @@ export function Advantages() {
                     </text>
                   ))}
                 </svg>
-                <div className="absolute right-3 top-2 rounded-xl bg-accent-amber/20 px-3 py-1.5 text-[11px] font-semibold text-ink-900 dark:text-white">
+                <div className="absolute right-3 top-2 rounded-xl bg-accent-amber/20 px-3 py-1.5 text-[11px] font-semibold text-ink-900 dark:bg-accent-amber/90 dark:text-ink-900">
                   Tezkor qaror
                 </div>
               </div>

@@ -106,7 +106,7 @@ export function ProblemSolution() {
                 ))}
               </svg>
 
-              <div className="absolute right-2 top-2 max-w-[180px] rounded-xl bg-accent-amber/20 px-3 py-2 text-[11px] font-semibold text-ink-900 dark:text-white">
+              <div className="absolute right-2 top-2 max-w-[180px] rounded-xl bg-accent-amber/20 px-3 py-2 text-[11px] font-semibold text-ink-900 dark:bg-accent-amber/90 dark:text-ink-900">
                 Platforma boshqaruv jarayonlarini optimallashtiradi
               </div>
             </div>

@@ -147,6 +147,7 @@ export function Sidebar({ open = false, onClose }: SidebarProps) {
             </div>
             <button
               aria-label="Chiqish"
+              onClick={() => alert("Chiqish funksiyasi tez orada qo'shiladi")}
               className="grid h-9 w-9 place-items-center rounded-lg text-ink-500 hover:bg-accent-rose/10 hover:text-accent-rose dark:text-slate-400"
             >
               <IconLogOut size={16} />

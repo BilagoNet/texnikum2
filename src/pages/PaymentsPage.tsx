@@ -225,13 +225,18 @@ export function PaymentsPage() {
               ))}
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="px-3 py-12 text-center text-sm text-ink-500">
+                  <td colSpan={7} className="px-3 py-12 text-center text-sm text-ink-500 dark:text-slate-400">
                     Hech narsa topilmadi
                   </td>
                 </tr>
               )}
             </tbody>
           </table>
+          {filtered.length > 18 && (
+            <div className="mt-3 text-xs text-ink-500 dark:text-slate-400">
+              Ko'rsatildi: 18 / {filtered.length}
+            </div>
+          )}
         </div>
       </section>
     </PageShell>

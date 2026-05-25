@@ -18,7 +18,7 @@ export function PageShell({ eyebrow, title, subtitle, actions, children }: PageS
           <div className="relative flex flex-wrap items-end justify-between gap-4">
             <div>
               {eyebrow && (
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-500">{eyebrow}</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-500 dark:text-brand-300">{eyebrow}</span>
               )}
               <h1 className="mt-2 text-balance text-2xl font-extrabold text-ink-900 sm:text-3xl dark:text-white">
                 {title}

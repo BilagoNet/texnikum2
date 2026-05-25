@@ -32,7 +32,7 @@ export function TeachersPage() {
         </button>
       }
     >
-      <section className="grid gap-4 sm:grid-cols-4">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Mini icon={<IconUsers size={18} />} tone="bg-brand-500" label="Jami o'qituvchilar" value={teacherSummary.total} />
         <Mini icon={<IconCalendar size={18} />} tone="bg-accent-emerald" label="Faol" value={teacherSummary.active} />
         <Mini icon={<IconUsers size={18} />} tone="bg-accent-violet" label="Yuklama to'liq" value={teacherSummary.full} />
@@ -101,7 +101,7 @@ export function TeachersPage() {
           </article>
         ))}
         {filtered.length === 0 && (
-          <div className="card col-span-full p-10 text-center text-sm text-ink-500">Hech narsa topilmadi</div>
+          <div className="card col-span-full p-10 text-center text-sm text-ink-500 dark:text-slate-400">Hech narsa topilmadi</div>
         )}
       </section>
     </PageShell>

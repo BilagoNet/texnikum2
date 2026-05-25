@@ -51,7 +51,7 @@ export function SearchInput({
         onChange={(e) => onChange(e.target.value)}
         className={`form-input ${pad}`}
         // Native search input'ning chrome 'x' tugmasini olib tashlaymiz (o'zimizniki bor)
-        style={{ WebkitAppearance: 'none' as any }}
+        style={{ WebkitAppearance: 'none' } as React.CSSProperties}
       />
       {value && (
         <button

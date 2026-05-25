@@ -41,7 +41,7 @@ export function ReportsPage() {
         </button>
       }
     >
-      <section className="grid gap-4 sm:grid-cols-4">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Stat label="Jami hisobotlar" value={reportSummary.total} tone="brand" />
         <Stat label="Tayyor" value={reportSummary.ready} tone="emerald" />
         <Stat label="Tayyorlanmoqda" value={reportSummary.pending} tone="amber" />
@@ -107,14 +107,17 @@ export function ReportsPage() {
                 <span className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-semibold ${statusTone[r.status]}`}>
                   <span className="h-1.5 w-1.5 rounded-full bg-current" /> {r.status}
                 </span>
-                <button className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-brand-500 px-3 py-1.5 text-[11px] font-semibold text-white transition group-hover:-translate-y-0.5">
+                <button
+                  onClick={() => alert('Hisobot yuklab olinmoqda...')}
+                  className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-brand-500 px-3 py-1.5 text-[11px] font-semibold text-white transition group-hover:-translate-y-0.5"
+                >
                   <IconDownload size={12} /> Yuklab olish
                 </button>
               </div>
             </li>
           ))}
           {filtered.length === 0 && (
-            <li className="p-12 text-center text-sm text-ink-500">Hech narsa topilmadi</li>
+            <li className="p-12 text-center text-sm text-ink-500 dark:text-slate-400">Hech narsa topilmadi</li>
           )}
         </ul>
       </section>

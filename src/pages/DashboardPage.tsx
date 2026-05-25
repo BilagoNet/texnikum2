@@ -87,7 +87,10 @@ export function DashboardPage() {
           <div className="mt-4">
             <Donut
               data={paymentSplit}
-              center={{ value: `${paymentSplit[0].value}%`, sub: paymentSplit[0].label }}
+              center={{
+                value: paymentSplit[0] ? `${paymentSplit[0].value}%` : '0%',
+                sub: paymentSplit[0]?.label ?? '',
+              }}
             />
           </div>
           <ul className="mt-4 space-y-2">
