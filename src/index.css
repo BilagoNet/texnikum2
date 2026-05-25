@@ -60,15 +60,15 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    /* Mobile'da horizontal scroll'ni butun sahifa darajasida o'chiramiz.
-       sticky/fixed elementlarga ta'sir qilmaydi (html scroll container o'zi). */
-    overflow-x: hidden;
   }
   body {
     margin: 0;
     font-family: var(--font-sans);
     background-color: var(--color-surface);
     color: var(--color-ink-900);
+    /* Mobile uchun xavfsizlik: chart yoki jadval kengayganda butun viewport
+       sirpanib ketmaydi. Faqat body'da (html'da emas) — scrollTo va sticky
+       to'g'ri ishlashi uchun. */
     overflow-x: hidden;
   }
   .dark body {
