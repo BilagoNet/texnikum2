@@ -28,7 +28,7 @@ export function Security() {
   return (
     <section className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="rounded-[2.5rem] bg-gradient-to-br from-brand-100/60 via-white to-accent-violet/10 p-8 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.25)] sm:p-12">
+        <div className="rounded-[2.5rem] bg-gradient-to-br from-brand-100/60 via-white to-accent-violet/10 p-8 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.25)] sm:p-12 dark:from-brand-500/15 dark:via-[color:var(--color-surface-card-dark)] dark:to-accent-violet/15 dark:shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)] dark:ring-1 dark:ring-white/5">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:bg-white/10">
               Xavfsizlik talablari
