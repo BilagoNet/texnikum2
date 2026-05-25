@@ -32,10 +32,10 @@ export function Footer() {
           <div className="lg:col-span-3">
             <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-white/80">Landing</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
-              <li><Link to="/" className="hover:text-white">Bosh sahifa</Link></li>
               <li><SectionLink sectionId="about" className="hover:text-white">Platforma haqida</SectionLink></li>
               <li><SectionLink sectionId="features" className="hover:text-white">Imkoniyatlar</SectionLink></li>
               <li><SectionLink sectionId="process" className="hover:text-white">Texnologik jarayon</SectionLink></li>
+              <li><SectionLink sectionId="results" className="hover:text-white">Natijalar</SectionLink></li>
             </ul>
             <h4 className="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-white/80">Boshqaruv</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
