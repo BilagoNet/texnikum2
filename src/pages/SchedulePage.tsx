@@ -24,16 +24,20 @@ export function SchedulePage() {
         <div className="flex items-center gap-1 rounded-full bg-brand-50 p-1 dark:bg-white/5">
           <button
             onClick={() => setView('week')}
-            className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
-              view === 'week' ? 'bg-brand-500 text-white' : 'text-brand-600 dark:text-slate-300'
+            className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+              view === 'week'
+                ? 'bg-brand-500 text-white shadow-[0_8px_20px_-8px_rgba(79,93,228,0.6)]'
+                : 'text-brand-600 hover:bg-white/40 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white'
             }`}
           >
             Hafta
           </button>
           <button
             onClick={() => setView('day')}
-            className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
-              view === 'day' ? 'bg-brand-500 text-white' : 'text-brand-600 dark:text-slate-300'
+            className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+              view === 'day'
+                ? 'bg-brand-500 text-white shadow-[0_8px_20px_-8px_rgba(79,93,228,0.6)]'
+                : 'text-brand-600 hover:bg-white/40 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white'
             }`}
           >
             Bir kun
@@ -49,7 +53,9 @@ export function SchedulePage() {
                 key={d}
                 onClick={() => setDay(d)}
                 className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold transition ${
-                  d === day ? 'bg-brand-500 text-white' : 'bg-brand-50 text-brand-600 dark:bg-white/5 dark:text-slate-300'
+                  d === day
+                    ? 'bg-brand-500 text-white shadow-[0_8px_20px_-8px_rgba(79,93,228,0.6)]'
+                    : 'bg-brand-50 text-brand-600 hover:bg-brand-100 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white'
                 }`}
               >
                 {d}

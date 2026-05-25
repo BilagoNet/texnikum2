@@ -181,10 +181,10 @@ export function PaymentsPage() {
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
                   tab === t
-                    ? 'bg-brand-500 text-white'
-                    : 'bg-brand-50 text-brand-600 hover:bg-brand-100 dark:bg-white/5 dark:text-slate-300'
+                    ? 'bg-brand-500 text-white shadow-[0_8px_20px_-8px_rgba(79,93,228,0.6)]'
+                    : 'bg-brand-50 text-brand-600 hover:bg-brand-100 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white'
                 }`}
               >
                 {t}

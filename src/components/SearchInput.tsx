@@ -40,7 +40,7 @@ export function SearchInput({
     <div className={`relative ${className}`}>
       <IconSearch
         size={iconSize}
-        className={`pointer-events-none absolute top-1/2 -translate-y-1/2 text-ink-300 dark:text-slate-500 ${iconLeft}`}
+        className={`pointer-events-none absolute top-1/2 -translate-y-1/2 text-ink-500 dark:text-slate-400 ${iconLeft}`}
         aria-hidden
       />
       <input
