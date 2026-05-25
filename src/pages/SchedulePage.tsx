@@ -82,10 +82,10 @@ export function SchedulePage() {
                 >
                   <div className="text-sm font-bold text-ink-900 dark:text-white">{l.subject}</div>
                   <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-ink-500 dark:text-slate-400">
-                    <span className="inline-flex items-center gap-1.5"><IconUser size={12} /> {l.teacher}</span>
-                    <span className="inline-flex items-center gap-1.5"><IconBook size={12} className="text-brand-500" /> {l.group}</span>
-                    <span className="inline-flex items-center gap-1.5"><IconMapPin size={12} className="text-accent-rose" /> {l.room}</span>
-                    <span className="inline-flex items-center gap-1.5"><IconClock size={12} className="text-accent-amber" /> {l.time}</span>
+                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap"><IconUser size={12} className="shrink-0" /> {l.teacher}</span>
+                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap"><IconBook size={12} className="shrink-0 text-brand-500" /> {l.group}</span>
+                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap"><IconMapPin size={12} className="shrink-0 text-accent-rose" /> {l.room}</span>
+                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap"><IconClock size={12} className="shrink-0 text-accent-amber" /> {l.time}</span>
                   </div>
                 </li>
               ))}

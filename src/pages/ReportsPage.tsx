@@ -101,16 +101,16 @@ export function ReportsPage() {
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
-                <span className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${typeTone[r.type]}`}>
+                <span className={`whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-semibold ${typeTone[r.type]}`}>
                   {r.type}
                 </span>
-                <span className="rounded-full bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-600 dark:bg-white/5 dark:text-brand-300">
+                <span className="whitespace-nowrap rounded-full bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-600 dark:bg-white/5 dark:text-brand-300">
                   {r.period}
                 </span>
-                <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold ${statusTone[r.status]}`}>
+                <span className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-semibold ${statusTone[r.status]}`}>
                   <span className="h-1.5 w-1.5 rounded-full bg-current" /> {r.status}
                 </span>
-                <button className="inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-3 py-1.5 text-[11px] font-semibold text-white transition group-hover:-translate-y-0.5">
+                <button className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-brand-500 px-3 py-1.5 text-[11px] font-semibold text-white transition group-hover:-translate-y-0.5">
                   <IconDownload size={12} /> Yuklab olish
                 </button>
               </div>

@@ -201,38 +201,38 @@ export function PaymentsPage() {
           <table className="w-full min-w-[820px] text-left text-sm">
             <thead>
               <tr className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-500 dark:text-slate-400">
-                <th className="px-3 py-3">Tranzaksiya</th>
-                <th className="px-3 py-3">O'quvchi</th>
-                <th className="px-3 py-3">Guruh</th>
-                <th className="px-3 py-3 text-right">Summa</th>
-                <th className="px-3 py-3">Usul</th>
-                <th className="px-3 py-3">Sana</th>
-                <th className="px-3 py-3">Holat</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Tranzaksiya</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">O'quvchi</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Guruh</th>
+                <th className="whitespace-nowrap px-3 py-3 text-right">Summa</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Usul</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Sana</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Holat</th>
               </tr>
             </thead>
             <tbody>
               {filtered.slice(0, 18).map((p) => (
                 <tr key={p.id} className="border-t border-ink-900/5 hover:bg-brand-50/40 dark:border-white/5 dark:hover:bg-white/5">
-                  <td className="px-3 py-3.5">
+                  <td className="whitespace-nowrap px-3 py-3.5">
                     <div className="text-xs font-bold text-ink-900 dark:text-white">{p.id}</div>
                   </td>
-                  <td className="px-3 py-3.5 font-semibold text-ink-900 dark:text-white">{p.studentName}</td>
-                  <td className="px-3 py-3.5">
-                    <span className="rounded-md bg-brand-50 px-2 py-1 text-xs font-bold text-brand-600 dark:bg-white/5 dark:text-brand-300">
+                  <td className="whitespace-nowrap px-3 py-3.5 font-semibold text-ink-900 dark:text-white">{p.studentName}</td>
+                  <td className="whitespace-nowrap px-3 py-3.5">
+                    <span className="inline-block whitespace-nowrap rounded-md bg-brand-50 px-2 py-1 text-xs font-bold text-brand-600 dark:bg-white/5 dark:text-brand-300">
                       {p.group}
                     </span>
                   </td>
-                  <td className="px-3 py-3.5 text-right font-bold text-ink-900 dark:text-white">
+                  <td className="whitespace-nowrap px-3 py-3.5 text-right font-bold text-ink-900 dark:text-white">
                     {fmtMoney(p.amount)}
                   </td>
-                  <td className="px-3 py-3.5">
-                    <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold ${methodTone[p.method]}`}>
+                  <td className="whitespace-nowrap px-3 py-3.5">
+                    <span className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-semibold ${methodTone[p.method]}`}>
                       <IconWallet size={11} /> {p.method}
                     </span>
                   </td>
-                  <td className="px-3 py-3.5 text-xs text-ink-500 dark:text-slate-400">{p.date}</td>
-                  <td className="px-3 py-3.5">
-                    <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${tone[p.status]}`}>
+                  <td className="whitespace-nowrap px-3 py-3.5 text-xs text-ink-500 dark:text-slate-400">{p.date}</td>
+                  <td className="whitespace-nowrap px-3 py-3.5">
+                    <span className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1 text-xs font-semibold ${tone[p.status]}`}>
                       <span className="h-1.5 w-1.5 rounded-full bg-current" /> {p.status}
                     </span>
                   </td>

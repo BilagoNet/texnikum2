@@ -99,33 +99,33 @@ export function StudentsPage() {
           <table className="w-full min-w-[820px] text-left text-sm">
             <thead>
               <tr className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-500 dark:text-slate-400">
-                <th className="px-3 py-3">ID</th>
-                <th className="px-3 py-3">F.I.SH</th>
-                <th className="px-3 py-3">Yo'nalish</th>
-                <th className="px-3 py-3">Guruh</th>
-                <th className="px-3 py-3">Telefon</th>
-                <th className="px-3 py-3">To'lov holati</th>
-                <th className="px-3 py-3">Davomat</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">ID</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">F.I.SH</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Yo'nalish</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Guruh</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Telefon</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">To'lov holati</th>
+                <th className="whitespace-nowrap px-3 py-3 text-left">Davomat</th>
               </tr>
             </thead>
             <tbody>
               {pageData.map((s) => (
                 <tr key={s.id} className="border-t border-ink-900/5 transition hover:bg-brand-50/40 dark:border-white/5 dark:hover:bg-white/5">
-                  <td className="px-3 py-4 text-xs font-bold text-ink-500 dark:text-slate-400">{s.id}</td>
-                  <td className="px-3 py-4 font-semibold text-ink-900 dark:text-white">{s.fullName}</td>
-                  <td className="px-3 py-4 text-ink-700 dark:text-slate-300">{s.course}</td>
-                  <td className="px-3 py-4">
-                    <span className="rounded-md bg-brand-50 px-2 py-1 text-xs font-bold text-brand-600 dark:bg-white/5 dark:text-brand-300">
+                  <td className="whitespace-nowrap px-3 py-4 text-xs font-bold text-ink-500 dark:text-slate-400">{s.id}</td>
+                  <td className="whitespace-nowrap px-3 py-4 font-semibold text-ink-900 dark:text-white">{s.fullName}</td>
+                  <td className="whitespace-nowrap px-3 py-4 text-ink-700 dark:text-slate-300">{s.course}</td>
+                  <td className="whitespace-nowrap px-3 py-4">
+                    <span className="inline-block whitespace-nowrap rounded-md bg-brand-50 px-2 py-1 text-xs font-bold text-brand-600 dark:bg-white/5 dark:text-brand-300">
                       {s.group}
                     </span>
                   </td>
-                  <td className="px-3 py-4 text-xs text-ink-500 dark:text-slate-400">{s.phone}</td>
-                  <td className="px-3 py-4">
-                    <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${statusStyles[s.paymentStatus]}`}>
+                  <td className="whitespace-nowrap px-3 py-4 text-xs text-ink-500 dark:text-slate-400">{s.phone}</td>
+                  <td className="whitespace-nowrap px-3 py-4">
+                    <span className={`inline-flex items-center whitespace-nowrap rounded-full px-3 py-1 text-xs font-semibold ${statusStyles[s.paymentStatus]}`}>
                       {s.paymentStatus}
                     </span>
                   </td>
-                  <td className="px-3 py-4">
+                  <td className="whitespace-nowrap px-3 py-4">
                     <div className="flex items-center gap-2">
                       <div className="h-1.5 w-16 rounded-full bg-ink-900/10 dark:bg-white/10">
                         <div
