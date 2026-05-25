@@ -32,13 +32,13 @@ export function Process() {
     <section id="process" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:bg-white/5">
             Texnologik jarayon
           </span>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl dark:text-white">
             Axborotni qayta ishlash texnologik jarayoni
           </h2>
-          <p className="mt-4 text-balance text-base text-ink-500">
+          <p className="mt-4 text-balance text-base text-ink-500 dark:text-slate-400">
             Ma&apos;lumotdan boshqaruv qarorigacha bo&apos;lgan bosqichlar.
           </p>
         </div>
@@ -61,7 +61,7 @@ export function Process() {
                 <p className="mt-2 text-sm leading-relaxed text-white/90">{s.desc}</p>
               </article>
               {i < steps.length - 1 && (
-                <div className="absolute -right-3 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white text-brand-500 shadow-[0_10px_25px_-12px_rgba(15,23,42,0.35)] lg:grid">
+                <div className="absolute -right-3 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white text-brand-500 shadow-[0_10px_25px_-12px_rgba(15,23,42,0.35)] lg:grid dark:bg-[color:var(--color-surface-card-dark)]">
                   <IconArrowRight size={16} />
                 </div>
               )}
@@ -69,7 +69,7 @@ export function Process() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-3xl border border-brand-100 bg-white p-6 text-center shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)]">
+        <div className="mt-10 rounded-3xl border border-brand-100 bg-white p-6 text-center shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] dark:border-white/10 dark:bg-[color:var(--color-surface-card-dark)]">
           <p className="text-balance text-base font-semibold text-brand-600">
             Texnologik jarayonni to&apos;g&apos;ri tashkil etish platformaning tezkor, aniq va samarali ishlashini
             ta&apos;minlaydi.

@@ -47,10 +47,10 @@ export function ProblemSolution() {
     <section id="develop" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:bg-white/5">
             Platformani rivojlantirish maqsadlari
           </span>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl dark:text-white">
             Qo&apos;lda boshqaruvdan{' '}
             <span className="gradient-text">samarali raqamli tizimga</span>
           </h2>
@@ -77,9 +77,9 @@ export function ProblemSolution() {
             ))}
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] sm:p-8 lg:col-span-8">
-            <h3 className="text-base font-bold text-ink-900">Raqamlashtirishning rivojlanish yo&apos;nalishi</h3>
-            <p className="mt-1 text-sm text-ink-500">
+          <div className="rounded-3xl bg-white p-6 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] sm:p-8 lg:col-span-8 dark:bg-[color:var(--color-surface-card-dark)]">
+            <h3 className="text-base font-bold text-ink-900 dark:text-white">Raqamlashtirishning rivojlanish yo&apos;nalishi</h3>
+            <p className="mt-1 text-sm text-ink-500 dark:text-slate-400">
               Platforma boshqaruv jarayonlarini optimallashtiradi
             </p>
 
@@ -106,7 +106,7 @@ export function ProblemSolution() {
                 ))}
               </svg>
 
-              <div className="absolute right-2 top-2 max-w-[180px] rounded-xl bg-accent-amber/20 px-3 py-2 text-[11px] font-semibold text-ink-900">
+              <div className="absolute right-2 top-2 max-w-[180px] rounded-xl bg-accent-amber/20 px-3 py-2 text-[11px] font-semibold text-ink-900 dark:text-white">
                 Platforma boshqaruv jarayonlarini optimallashtiradi
               </div>
             </div>

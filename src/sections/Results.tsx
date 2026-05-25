@@ -18,24 +18,24 @@ export function Results() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid items-end gap-6 lg:grid-cols-2">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:bg-white/5">
               Bitiruv ishining natijalari
             </span>
-            <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl dark:text-white">
               Asosiy natijalar va ishlab chiqilgan yechimlar
             </h2>
           </div>
-          <p className="text-balance text-ink-500 lg:text-right">
+          <p className="text-balance text-ink-500 lg:text-right dark:text-slate-400">
             Platforma o&apos;quv markazlari faoliyatini avtomatlashtirish, boshqaruvni takomillashtirish va moliyaviy
             hisobotlarni yagona tizimda yuritishga xizmat qiladi.
           </p>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-12">
-          <div className="rounded-3xl bg-white p-6 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] sm:p-8 lg:col-span-8">
+          <div className="rounded-3xl bg-white p-6 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] sm:p-8 lg:col-span-8 dark:bg-[color:var(--color-surface-card-dark)]">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <h3 className="text-base font-bold text-ink-900">Olingan asosiy natijalar</h3>
-              <ul className="flex flex-wrap items-center gap-4 text-xs text-ink-500">
+              <h3 className="text-base font-bold text-ink-900 dark:text-white">Olingan asosiy natijalar</h3>
+              <ul className="flex flex-wrap items-center gap-4 text-xs text-ink-500 dark:text-slate-400">
                 {sets.map((s) => (
                   <li key={s.key} className="flex items-center gap-2">
                     <span className="h-2.5 w-2.5 rounded-full" style={{ background: s.color }} />
@@ -119,8 +119,8 @@ function GroupedBars() {
       <div className="relative h-64 w-full">
         {[0, 25, 50, 75, 100].map((y) => (
           <div key={y} className="absolute inset-x-0" style={{ top: `${100 - y}%` }}>
-            <div className="absolute -left-2 -translate-y-1/2 text-[10px] text-ink-300">{y}</div>
-            <div className="ml-6 border-t border-dashed border-ink-900/5" />
+            <div className="absolute -left-2 -translate-y-1/2 text-[10px] text-ink-300 dark:text-slate-500">{y}</div>
+            <div className="ml-6 border-t border-dashed border-ink-900/5 dark:border-white/5" />
           </div>
         ))}
 
@@ -139,7 +139,7 @@ function GroupedBars() {
                   />
                 ))}
               </div>
-              <span className="mt-2 text-[10px] text-ink-500">{c}</span>
+              <span className="mt-2 text-[10px] text-ink-500 dark:text-slate-400">{c}</span>
             </div>
           ))}
         </div>

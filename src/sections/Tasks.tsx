@@ -34,15 +34,15 @@ export function Tasks() {
     <section className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:bg-white/5">
             Bitiruv ishining vazifalari
           </span>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl">
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl dark:text-white">
             Platformani ishlab chiqish bo&apos;yicha asosiy yo&apos;nalishlar
           </h2>
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)]">
+        <div className="mt-10 overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] dark:bg-[color:var(--color-surface-card-dark)]">
           <div className="hidden grid-cols-12 gap-4 px-6 py-4 text-xs font-bold uppercase tracking-[0.18em] sm:grid">
             <div className="col-span-2 rounded-xl bg-accent-amber px-3 py-2 text-center text-white">Bosqich</div>
             <div className="col-span-4 rounded-xl bg-accent-rose px-3 py-2 text-center text-white">Vazifa</div>
@@ -50,23 +50,23 @@ export function Tasks() {
             <div className="col-span-2 rounded-xl bg-accent-violet px-3 py-2 text-center text-white">Holat</div>
           </div>
 
-          <div className="divide-y divide-ink-900/5">
+          <div className="divide-y divide-ink-900/5 dark:divide-white/5">
             {rows.map((r) => (
               <div
                 key={r.stage}
-                className="grid items-center gap-3 px-6 py-5 transition hover:bg-brand-50/40 sm:grid-cols-12 sm:gap-4"
+                className="grid items-center gap-3 px-6 py-5 transition hover:bg-brand-50/40 sm:grid-cols-12 sm:gap-4 dark:hover:bg-white/5"
               >
                 <div className="sm:col-span-2">
-                  <span className="text-sm font-bold text-ink-900">{r.stage}</span>
+                  <span className="text-sm font-bold text-ink-900 dark:text-white">{r.stage}</span>
                 </div>
-                <div className="text-sm text-ink-700 sm:col-span-4">
-                  <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300 sm:hidden">
+                <div className="text-sm text-ink-700 sm:col-span-4 dark:text-slate-200">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300 sm:hidden dark:text-slate-500">
                     Vazifa
                   </span>
                   {r.task}
                 </div>
-                <div className="text-sm text-ink-500 sm:col-span-4">
-                  <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300 sm:hidden">
+                <div className="text-sm text-ink-500 sm:col-span-4 dark:text-slate-400">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-ink-300 sm:hidden dark:text-slate-500">
                     Amaliy natija
                   </span>
                   {r.result}

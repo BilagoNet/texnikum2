@@ -30,10 +30,10 @@ export function Advantages() {
     <section id="advantages" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:bg-white/5">
             Avtomatlashtirishning afzalliklari
           </span>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl dark:text-white">
             Platforma joriy etilganda kutiladigan natijalar
           </h2>
         </div>
@@ -68,8 +68,8 @@ export function Advantages() {
             </article>
 
             {/* Boshqaruv samaradorligining oshishi chart */}
-            <article className="rounded-3xl bg-white p-6 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] sm:col-span-2">
-              <h3 className="text-base font-bold text-ink-900">Boshqaruv samaradorligining oshishi</h3>
+            <article className="rounded-3xl bg-white p-6 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] sm:col-span-2 dark:bg-[color:var(--color-surface-card-dark)]">
+              <h3 className="text-base font-bold text-ink-900 dark:text-white">Boshqaruv samaradorligining oshishi</h3>
               <div className="relative mt-4 h-56 w-full">
                 <svg viewBox="0 0 360 200" className="h-full w-full">
                   {[0, 10, 20, 30].map((v) => (
@@ -108,7 +108,7 @@ export function Advantages() {
                     </text>
                   ))}
                 </svg>
-                <div className="absolute right-3 top-2 rounded-xl bg-accent-amber/20 px-3 py-1.5 text-[11px] font-semibold text-ink-900">
+                <div className="absolute right-3 top-2 rounded-xl bg-accent-amber/20 px-3 py-1.5 text-[11px] font-semibold text-ink-900 dark:text-white">
                   Tezkor qaror
                 </div>
               </div>

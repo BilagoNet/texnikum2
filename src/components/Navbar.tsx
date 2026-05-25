@@ -16,12 +16,10 @@ type LinkItem =
   | { kind: 'section'; id: string; label: string }
 
 const links: LinkItem[] = [
-  { kind: 'route', to: '/', label: 'Bosh sahifa', exact: true },
   { kind: 'section', id: 'about', label: 'Platforma haqida' },
   { kind: 'section', id: 'features', label: 'Imkoniyatlar' },
   { kind: 'section', id: 'process', label: 'Jarayon' },
   { kind: 'section', id: 'results', label: 'Natijalar' },
-  { kind: 'section', id: 'contact', label: 'Aloqa' },
 ]
 
 const linkBase =

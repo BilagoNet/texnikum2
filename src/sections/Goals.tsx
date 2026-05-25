@@ -51,12 +51,12 @@ export function Goals() {
           {goals.map((g) => (
             <article
               key={g.title}
-              className="group relative overflow-hidden rounded-3xl bg-white p-7 text-ink-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.4)] transition hover:-translate-y-1 hover:shadow-[0_40px_90px_-30px_rgba(0,0,0,0.45)]"
+              className="group relative overflow-hidden rounded-3xl bg-white p-7 text-ink-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.4)] transition hover:-translate-y-1 hover:shadow-[0_40px_90px_-30px_rgba(0,0,0,0.45)] dark:bg-[color:var(--color-surface-card-dark)] dark:text-white"
             >
               <div className={`grid h-14 w-14 place-items-center rounded-2xl ${g.bg} ${g.accent}`}>{g.icon}</div>
               <h3 className="mt-6 text-xl font-bold">{g.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-500">{g.desc}</p>
-              <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-brand-50 opacity-0 transition group-hover:opacity-100" />
+              <p className="mt-3 text-sm leading-relaxed text-ink-500 dark:text-slate-400">{g.desc}</p>
+              <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-brand-50 opacity-0 transition group-hover:opacity-100 dark:bg-white/5" />
             </article>
           ))}
         </div>

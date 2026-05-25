@@ -5,10 +5,10 @@ export function Features() {
     <section id="features" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600 dark:bg-white/5">
             Bitiruv ishining amaliy ahamiyati
           </span>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-ink-900 sm:text-4xl lg:text-5xl dark:text-white">
             O&apos;quv markazlari faoliyatini avtomatlashtirish bo&apos;yicha asosiy yo&apos;nalishlar
           </h2>
         </div>
@@ -71,43 +71,43 @@ export function Features() {
           </article>
 
           {/* Boshqaruv tizimi */}
-          <article className="rounded-3xl bg-white p-7 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)]">
+          <article className="rounded-3xl bg-white p-7 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] dark:bg-[color:var(--color-surface-card-dark)]">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold text-ink-900">Boshqaruv tizimi</h3>
+              <h3 className="text-lg font-bold text-ink-900 dark:text-white">Boshqaruv tizimi</h3>
               <div className="grid h-10 w-10 place-items-center rounded-full bg-accent-amber/15 text-accent-amber">
                 <IconCog size={18} />
               </div>
             </div>
             <div className="mt-5 grid grid-cols-2 gap-4">
               <div>
-                <div className="text-xs uppercase tracking-[0.18em] text-ink-500">Asosiy vazifa</div>
-                <p className="mt-1 text-sm font-medium text-ink-700">
+                <div className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-slate-400">Asosiy vazifa</div>
+                <p className="mt-1 text-sm font-medium text-ink-700 dark:text-slate-200">
                   O&apos;quvchilar, o&apos;qituvchilar va dars jadvalini boshqarish
                 </p>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-[0.18em] text-accent-emerald">Natija</div>
-                <p className="mt-1 text-sm font-medium text-ink-700">Markaziy nazorat va qulay boshqaruv</p>
+                <p className="mt-1 text-sm font-medium text-ink-700 dark:text-slate-200">Markaziy nazorat va qulay boshqaruv</p>
               </div>
             </div>
           </article>
 
           {/* Tahlil va marketing */}
-          <article className="rounded-3xl bg-white p-7 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)]">
+          <article className="rounded-3xl bg-white p-7 shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] dark:bg-[color:var(--color-surface-card-dark)]">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold text-ink-900">Tahlil va marketing</h3>
+              <h3 className="text-lg font-bold text-ink-900 dark:text-white">Tahlil va marketing</h3>
               <div className="grid h-10 w-10 place-items-center rounded-full bg-accent-violet/15 text-accent-violet">
                 <IconUsers size={18} />
               </div>
             </div>
             <div className="mt-5 grid grid-cols-2 gap-4">
               <div>
-                <div className="text-xs uppercase tracking-[0.18em] text-ink-500">Asosiy vazifa</div>
-                <p className="mt-1 text-sm font-medium text-ink-700">Statistik tahlil va mijozlar bilan aloqa</p>
+                <div className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-slate-400">Asosiy vazifa</div>
+                <p className="mt-1 text-sm font-medium text-ink-700 dark:text-slate-200">Statistik tahlil va mijozlar bilan aloqa</p>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-[0.18em] text-accent-emerald">Natija</div>
-                <p className="mt-1 text-sm font-medium text-ink-700">
+                <p className="mt-1 text-sm font-medium text-ink-700 dark:text-slate-200">
                   Qaror qabul qilish sifati va xizmat ko&apos;rsatish yaxshilanadi
                 </p>
               </div>
