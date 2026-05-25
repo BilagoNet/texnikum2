@@ -61,7 +61,7 @@ export function Process() {
                 <p className="mt-2 text-sm leading-relaxed text-white/90">{s.desc}</p>
               </article>
               {i < steps.length - 1 && (
-                <div className="absolute -right-3 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white text-brand-500 shadow-[0_10px_25px_-12px_rgba(15,23,42,0.35)] lg:grid dark:bg-[color:var(--color-surface-card-dark)]">
+                <div className="absolute -right-3 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-white text-brand-500 shadow-[0_10px_25px_-12px_rgba(15,23,42,0.35)] lg:grid dark:bg-[color:var(--color-surface-card-dark)] dark:text-white">
                   <IconArrowRight size={16} />
                 </div>
               )}
@@ -70,7 +70,7 @@ export function Process() {
         </div>
 
         <div className="mt-10 rounded-3xl border border-brand-100 bg-white p-6 text-center shadow-[0_18px_50px_-22px_rgba(15,23,42,0.18)] dark:border-white/10 dark:bg-[color:var(--color-surface-card-dark)]">
-          <p className="text-balance text-base font-semibold text-brand-600">
+          <p className="text-balance text-base font-semibold text-brand-600 dark:text-white">
             Texnologik jarayonni to&apos;g&apos;ri tashkil etish platformaning tezkor, aniq va samarali ishlashini
             ta&apos;minlaydi.
           </p>
