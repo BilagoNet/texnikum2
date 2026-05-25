@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useTheme } from '../context/Theme'
-import { IconBell, IconMenu, IconMoon, IconSearch, IconSun } from './Icon'
+import { IconBell, IconMenu, IconMoon, IconSun } from './Icon'
+import { SearchInput } from './SearchInput'
 
 const titles: Record<string, { eyebrow: string; title: string }> = {
   '/dashboard': { eyebrow: 'Boshqaruv paneli', title: 'Dashboard' },
@@ -17,6 +18,11 @@ const titles: Record<string, { eyebrow: string; title: string }> = {
 
 interface TopbarProps {
   onOpenSidebar: () => void
+}
+
+function TopbarSearch() {
+  const [v, setV] = useState('')
+  return <SearchInput value={v} onChange={setV} placeholder="Qidirish… (⌘K)" size="sm" />
 }
 
 export function Topbar({ onOpenSidebar }: TopbarProps) {
@@ -55,16 +61,8 @@ export function Topbar({ onOpenSidebar }: TopbarProps) {
         </div>
 
         <div className="ml-auto flex items-center gap-2">
-          <div className="relative hidden md:block">
-            <IconSearch
-              size={16}
-              className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-300"
-            />
-            <input
-              type="search"
-              placeholder="Qidirish… (⌘K)"
-              className="form-input !w-56 !py-2 !pl-10 !pr-3 lg:!w-72"
-            />
+          <div className="hidden w-56 lg:w-72 md:block">
+            <TopbarSearch />
           </div>
           <button
             aria-label="Bildirishnomalar"

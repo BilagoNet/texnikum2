@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { PageShell } from '../components/PageShell'
-import { IconCalendar, IconPhone, IconPlus, IconSearch, IconUsers } from '../components/Icon'
+import { SearchInput } from '../components/SearchInput'
+import { IconCalendar, IconPhone, IconPlus, IconUsers } from '../components/Icon'
 import { teacherSummary, teachers } from '../data/teachers'
 
 const statusStyle: Record<string, string> = {
@@ -39,16 +40,11 @@ export function TeachersPage() {
       </section>
 
       <section className="card p-4 sm:p-6">
-        <div className="relative">
-          <IconSearch size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-300" />
-          <input
-            type="search"
-            placeholder="F.I.SH, fan yoki ID bo'yicha qidirish"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            className="form-input pl-11"
-          />
-        </div>
+        <SearchInput
+          value={q}
+          onChange={setQ}
+          placeholder="F.I.SH, fan yoki ID bo'yicha qidirish"
+        />
       </section>
 
       <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">

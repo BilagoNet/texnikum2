@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
 import { PageShell } from '../components/PageShell'
+import { SearchInput } from '../components/SearchInput'
 import {
   IconAlert,
   IconCheckCircle,
   IconDownload,
-  IconSearch,
   IconTrending,
   IconWallet,
 } from '../components/Icon'
@@ -170,16 +170,12 @@ export function PaymentsPage() {
       {/* Transactions */}
       <section className="card p-4 sm:p-6">
         <div className="flex flex-wrap items-center gap-3">
-          <div className="relative flex-1 min-w-[220px]">
-            <IconSearch size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-300" />
-            <input
-              type="search"
-              placeholder="O'quvchi F.I.SH, guruh yoki tranzaksiya ID"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              className="form-input pl-11"
-            />
-          </div>
+          <SearchInput
+            value={q}
+            onChange={setQ}
+            placeholder="O'quvchi F.I.SH, guruh yoki tranzaksiya ID"
+            className="flex-1 min-w-[220px]"
+          />
           <div className="flex items-center gap-2 overflow-x-auto scrollbar-hidden">
             {tabs.map((t) => (
               <button

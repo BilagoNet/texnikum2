@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { PageShell } from '../components/PageShell'
-import { IconDownload, IconFile, IconPlus, IconSearch } from '../components/Icon'
+import { SearchInput } from '../components/SearchInput'
+import { IconDownload, IconFile, IconPlus } from '../components/Icon'
 import { reportSummary, reports, type Report } from '../data/reports'
 
 const tabs: ('Barchasi' | Report['type'])[] = ['Barchasi', 'Moliyaviy', "O'quv", 'Statistik', 'Yuklama']
@@ -49,16 +50,12 @@ export function ReportsPage() {
 
       <section className="card p-4 sm:p-6">
         <div className="flex flex-wrap items-center gap-3">
-          <div className="relative flex-1 min-w-[220px]">
-            <IconSearch size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-300" />
-            <input
-              type="search"
-              placeholder="Hisobot nomi, muallif yoki ID bo'yicha qidirish"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              className="form-input pl-11"
-            />
-          </div>
+          <SearchInput
+            value={q}
+            onChange={setQ}
+            placeholder="Hisobot nomi, muallif yoki ID bo'yicha qidirish"
+            className="flex-1 min-w-[220px]"
+          />
           <div className="flex items-center gap-2 overflow-x-auto scrollbar-hidden">
             {tabs.map((t) => (
               <button
